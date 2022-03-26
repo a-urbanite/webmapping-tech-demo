@@ -1,0 +1,31 @@
+{
+    "type": "FeatureCollection",
+    "name": "wallpieces",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+          "fid": 1,
+          "name": "Stresemannstrasse",
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "<img class='akzise_image' src='https://www.akzisemauer-berlin.de/wp-content/uploads/2020/09/Berliner_Akzisemauer.jpg' alt='stresemannstraße stück'/>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.384523, 52.502779]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 2,
+          "name": "Hannoversche Strasse",
+          "bezirk": "Mitte",
+          "popup": "<img class='akzise_image' src='https://www.akzisemauer-berlin.de/wp-content/uploads/2020/09/Berlin_Mitte_Hannoversche_Strasse_9_Akzisemauer-scaled.jpg' alt='stresemannstraße stück' />"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.380004, 52.528414]
+        }
+      }
+      ]
+}
