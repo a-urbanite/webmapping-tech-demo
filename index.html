@@ -13,7 +13,7 @@
 <h1>Web Mapping</h1>
 <h2>ArcGIS Hosting</h2>
 <p>
-    The first time i tried to brring Geodata into the web was quite cumbersome 
+    The first time i tried to bring Geodata into the web was quite cumbersome 
     because i just started programming and knew nothing of Web Development. 
     I opted for a hosted solution which could be integrated easily in every Website with an iframe. 
     There are many such services and the Esri servers are by far not the best. 
@@ -24,10 +24,6 @@
 </p>
 <div class="embed-container map-container" >
     <iframe 
-        frameborder="0" 
-        scrolling="no" 
-        marginheight="0" 
-        marginwidth="0" 
         title="Trade Routes of ancient Arabia" 
         src="//www.arcgis.com/apps/Embed/index.html?webmap=394b5ddec04c44208b28838d3daf3d9d&extent=32.1798,23.6323,48.4066,31.7635&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light">
     </iframe>
@@ -40,17 +36,17 @@
 <h2>Geonode Hosting</h2>
 <p>
     Another way is to host your own infrastructure. 
-    My last employer, the German Archaeological Institute, maintains an instance of Geonode for its own excavations, see example below
+    My last employer, the German Archaeological Institute, maintains an instance of Geonode for its own excavations. The example below is their documentation of the <a target="blank" href="https://www.dainst.org/projekt/-/project-display/14186">Pergamon excavation</a>, a dig going on since ove 130 years 
 </p>
 <div class="map-container">
     <iframe src="https://geoserver.dainst.org/maps/5548/embed"></iframe>
 </div>
 <h2>Leaflet</h2>
 <p>
-    Once one has taken the step into actually writing code one has a few choices. 
+    Once one has taken the step into actually writing code the fun starts. 
     Leaflet is considered the most accessible library for Webmapping. 
     To build a very basic map only very few lines of code are needed.
-    Below you find an example i built for a Freelance Job - a website accompanying an 
+    Below you find an example i built for a Freelance Job - a <a target="blank" href="http://www.akzisemauer-berlin.de/">website</a> accompanying an 
     exhibition about an early-modern city wall surrounding Berlin
 </p>
 <div id="Leaflet_map" class="map-container"></div>
@@ -63,7 +59,8 @@
     There is certain styling, certain customisation of default elements like 
     the controls and the popup boxes and some interactivity. The checkboxes in the lower 
     left activate overlays of georeferenced digitised paper maps hosted on a tile server here.
-    Leaflet clearly provides enough tools to built a nice presentation but reaches its limits with complex interactions.
+    Leaflet is the best choice when one wants to quickly and easily map some features. 
+    It reaches its limits when manipulation of data in the sense of geoprocessing is desired.
 </p>
 <h2>OpenLayers</h2>
 <p>OpenLayers on the other hand is loaded with functions but more complex to handle. Consider this implementation of one of the <a target="_blank" href="https://openlayers.org/en/latest/examples/shaded-relief.html">official examples</a>.</p>
@@ -92,11 +89,11 @@
     </tr>
 </table>
 <p>
-    It generates a hillshade from a DEM. Meaning it takes a Digital Elevation 
+    It generates a hillshade, meaning it takes a Digital Elevation 
     Model (DEM) and calculates the shadowfall given a certain position of the sun. 
     The parameters to define the suns position are linked to the 3 sliders and the 
     calculation is updated whenever on of the sliders is used.
-    Quite elaborated geoprocessing yet completely client-sided. Impressive.</p>
+    Quite elaborated geoprocessing yet completely client-sided. Impressive!</p>
 
 </body>
 </html>
