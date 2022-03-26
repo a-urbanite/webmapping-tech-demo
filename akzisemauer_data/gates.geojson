@@ -1,0 +1,321 @@
+{
+    "type": "FeatureCollection",
+    "name": "gates_v2",
+    "features": [{
+        "type": "Feature",
+        "properties": {
+          "fid": 1,
+          "name": "Hallesches Tor",
+          "type": "station",
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "<a href=\"https:\/\/www.akzisemauer-berlin.de\/#stationen\" target=\"_blank\">\n<div class='ppcont'>  <img class='akzise_image' src=\"https://www.akzisemauer-berlin.de/wp-content/uploads/2020/12/HalleschesTor_thumb.png\" alt=\"Schlesi\">\n<\/a>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.391986858127694, 52.497800050614757]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 2,
+          "name": "Wassertor",
+          "type": null,
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "Wassertor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.412926123932257, 52.498270602862696]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 3,
+          "name": "Kottbusser Tor",
+          "type": "station",
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "<a href=\"https:\/\/www.akzisemauer-berlin.de\/#stationen\" target=\"_blank\">\n<div class='ppcont'>  <img class='akzise_image' src=\"https://www.akzisemauer-berlin.de/wp-content/uploads/2020/12/KottbusserTor_thumb.png\" alt=\"Schlesi\">\n<\/a>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.418441348679867, 52.49901689005506]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 4,
+          "name": "Köpenicker Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "Köpenicker Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.431161709583584, 52.49940124437466]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 5,
+          "name": "Schlesisches Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "Schlesisches Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.442004724323434, 52.501043012972673]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 6,
+          "name": "Stralauer Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "Stralauer Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.447027526579182, 52.502647439472589]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 7,
+          "name": "Oberbaum",
+          "type": "station",
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "<a href=\"https:\/\/www.akzisemauer-berlin.de\/#stationen\" target=\"_blank\">\n<div class='ppcont'>  <img class='akzise_image' src=\"https://www.akzisemauer-berlin.de/wp-content/uploads/2021/01/pink.png\" alt=\"Schlesi\">\n<\/a>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.445793267845376, 52.501677530960151]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 8,
+          "name": "Frankfurter Tor",
+          "type": "station",
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "<a href=\"https:\/\/www.akzisemauer-berlin.de\/#stationen\" target=\"_blank\">\n<div class='ppcont'>  <img class='akzise_image' src=\"https://www.akzisemauer-berlin.de/wp-content/uploads/2020/12/FrankfurterTor_thumb.png\" alt=\"Schlesi\">\n<\/a>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.441661616927503, 52.517259765959651]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 9,
+          "name": "Landsberger Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "Landsberger Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.433418590767353, 52.523243572456771]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 10,
+          "name": "Königstor",
+          "type": null,
+          "state": null,
+          "bezirk": "Prenzlauer Berg",
+          "popup": "Königstor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.423754743418504, 52.528180051038454]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 11,
+          "name": "Prenzlauer Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Prenzlauer Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.415703223578411, 52.527023161893368]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 12,
+          "name": "Schönhauser Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Schönhauser Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.409449498223337, 52.528768162096412]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 13,
+          "name": "Rosentaler Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Rosentaler Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.401366331511001, 52.529660224767156]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 14,
+          "name": "Oranienburger Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Oranienburger Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.387086978145902, 52.527153665619672]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 15,
+          "name": "Hamburger Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Hamburger Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.393813897828988, 52.528526864088064]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 16,
+          "name": "Neues Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Neues Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.378679113002523, 52.528276688326194]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 17,
+          "name": "Unterbaum",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Unterbaum"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.37588739228714, 52.521873551774434]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 18,
+          "name": "Brandenburger Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "<a href=\"https:\/\/de.wikipedia.org\/wiki\/Brandenburger_Tor\">Brandenburger Tor<\/a> "
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.377810817245157, 52.516287994161203]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 19,
+          "name": "Potsdamer Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Mitte",
+          "popup": "Potsdamer Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.376831433625238, 52.50951276248373]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 20,
+          "name": "Anhalter Tor",
+          "type": null,
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "Anhalter Tor"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.382314122437151, 52.504493104624935]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "fid": 21,
+          "name": "Eisenbahnbrücke",
+          "type": "station",
+          "state": null,
+          "bezirk": "Friedrichshain-Kreuzberg",
+          "popup": "<a href=\"https://www.akzisemauer-berlin.de/#stationen\"> <div class='ppcont'> <img class='akzise_image' src=\"https://www.akzisemauer-berlin.de/wp-content/uploads/2021/01/gruen-c.png\" alt=\"Schlesi\"> <\/a>"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [13.449453, 52.506430]
+        }
+      }
+      
+    ]
+}
