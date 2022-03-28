@@ -73,7 +73,7 @@
 <div id="google-map" class="map-container"></div>
 <form onsubmit="geocodeFunction(event)">
     <input type="text" placeholder="Enter Adress">
-    <input type="submit">
+    <input type="submit" hidden>
 </form>
 <script>
     // Initialize and add the map
@@ -87,18 +87,18 @@ function initMap() {
   });
   window.map = map
   // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
-  });
+//   const marker = new google.maps.Marker({
+//     position: uluru,
+//     map: map,
+//   });
 
   map.data.loadGeoJson(
     "https://storage.googleapis.com/mapsdevsite/json/google.json"
   );
 
-  map.data.loadGeoJson(
-    "./akzisemauer_data/gates.geojson"
-  );
+//   map.data.loadGeoJson(
+//     "./akzisemauer_data/gates.geojson"
+//   );
 
   map.data.setStyle({
   fillColor: 'green'
@@ -121,10 +121,18 @@ const geocodeFunction = async (event) => {
         })
         .catch((err) => {console.log(err)})
 
+    console.log(newCoords)
+
     const marker = new google.maps.Marker({
         position: newCoords,
         map: window.map,
     });
+    var infowindow = new google.maps.InfoWindow({
+                content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${newCoords.lat} lng ${newCoords.lng}</p>`
+              });
+    marker.addListener('click', function() {
+          infowindow.open(window.map, marker);
+        });
     window.map.panTo(newCoords)
 
 } 
