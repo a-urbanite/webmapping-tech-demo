@@ -83,7 +83,7 @@
 
 </p>
 <div id="google-map" class="map-container"></div>
-<form onsubmit="geocodeFunction(event)">
+<form onsubmit=geocodeFunction(event)>
     <input type="text" placeholder="Enter Adress">
     <input type="submit" hidden>
 </form>
@@ -121,7 +121,7 @@ function initMap() {
 const geocodeFunction = async (event) => {
     event.preventDefault()
     console.log(event)
-    const apikey = <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
+    const apikey = <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>;
     const enteredAddress = event.target[0].value
     const newCoords = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
