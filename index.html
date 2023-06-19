@@ -148,23 +148,24 @@
           })
           .then((res) => {
             const coords = res.data.results[0].geometry.location;
-            console.log(coords)
+            console.log(coords);
 
-            const marker = new google.maps.Marker({
-              position: coords,
-              map: window.map,
-            });
+            if (coords) {
+              const marker = new google.maps.Marker({
+                position: coords,
+                map: window.map,
+              });
 
-            var infowindow = new google.maps.InfoWindow({
-              content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${coords.lat} lng ${coords.lng}</p>`,
-            });
+              var infowindow = new google.maps.InfoWindow({
+                content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${coords.lat} lng ${coords.lng}</p>`,
+              });
 
-            marker.addListener("click", function () {
-              infowindow.open(window.map, marker);
-            });
+              marker.addListener("click", function () {
+                infowindow.open(window.map, marker);
+              });
 
-            window.map.panTo(coords);
-
+              window.map.panTo(coords);
+            }
           })
           .catch((err) => {
             console.log(err);
