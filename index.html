@@ -165,9 +165,12 @@
           var infowindow = new google.maps.InfoWindow({
                       content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${newCoords.lat} lng ${newCoords.lng}</p>`
                     });
-          marker.addListener('click', function() {
-                infowindow.open(window.map, marker);
-              });
+
+            infowindow.open(window.map, marker);
+
+        //   marker.addListener('click', function() {
+        //       });
+
           window.map.panTo(newCoords)
 
       }
