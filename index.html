@@ -139,7 +139,7 @@
         event.preventDefault();
 
         const enteredAddress = event.target[0].value;
-        const newCoords = await axios
+        await axios
           .get("https://maps.googleapis.com/maps/api/geocode/json", {
             params: {
               address: enteredAddress,
@@ -148,29 +148,26 @@
           })
           .then((res) => {
             const coords = res.data.results[0].geometry.location;
-            return coords;
+
+            const marker = new google.maps.Marker({
+              position: newCoords,
+              map: window.map,
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+              content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${coords.lat} lng ${coords.lng}</p>`,
+            });
+
+            marker.addListener("click", function () {
+              infowindow.open(window.map, marker);
+            });
+
+            window.map.panTo(coords);
+            
           })
           .catch((err) => {
             console.log(err);
           });
-
-        console.log(newCoords);
-
-        const marker = new google.maps.Marker({
-          position: newCoords,
-          map: window.map,
-        });
-
-        var infowindow = new google.maps.InfoWindow({
-          content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${newCoords.lat} lng ${newCoords.lng}</p>`,
-        });
-
-        marker.addListener("click", function () {
-          infowindow.open(window.map, marker);
-        });
-
-        window.map.panTo(newCoords);
-
       };
     </script>
 
