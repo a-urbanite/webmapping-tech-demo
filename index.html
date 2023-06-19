@@ -120,12 +120,13 @@ function initMap() {
 
 const geocodeFunction = async (event) => {
     event.preventDefault()
-    // const apikey = <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
+    console.log(event)
+    const apikey = <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
     const enteredAddress = event.target[0].value
     const newCoords = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
             address: enteredAddress,
-            key: 'AIzaSyBGt7x-R0JK3B6wulskJbMLVZ4cAN4Yy4g'
+            key: apikey
             }
         })
         .then((res) => {
