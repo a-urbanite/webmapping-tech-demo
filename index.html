@@ -148,6 +148,7 @@
           })
           .then((res) => {
             const coords = res.data.results[0].geometry.location;
+            console.log(coords)
 
             const marker = new google.maps.Marker({
               position: coords,
