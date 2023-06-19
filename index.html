@@ -19,11 +19,11 @@
 <body>
 <h1>Web Mapping</h1>
 
-<?php  $my_env_var = getenv('GOOGLE_MAPS_API_KEY'); 
-echo $my_env_var;
-?>
+<?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
 
-<?php echo 'While this is going to be parsed.'; ?>
+<script type="text/javascript">
+    <?php echo "alert('message');"; ?>
+  </script>
 
 
 <h2>ArcGIS Hosting</h2>
@@ -120,6 +120,7 @@ function initMap() {
 
 const geocodeFunction = async (event) => {
     event.preventDefault()
+    // const apikey = <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
     const enteredAddress = event.target[0].value
     const newCoords = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
