@@ -142,16 +142,15 @@
 
       const geocodeFunction = async (event) => {
           event.preventDefault()
-          const apikey = "<?php  echo getenv('GOOGLE_MAPS_API_KEY');?>";
-          console.log(apikey)
-          const enteredAddress = event.target[0].value
+
           const newCoords = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
               params: {
-                  address: enteredAddress,
-                  key: apikey
-                  }
-              })
-              .then((res) => {
+                  address: event.target[0].value,
+                  key: "<?php  echo getenv('GOOGLE_MAPS_API_KEY');?>",
+                }
+            })
+            .then((res) => {
+                  console.log(res)
                   const coords = res.data.results[0].geometry.location
                   return coords
               })
