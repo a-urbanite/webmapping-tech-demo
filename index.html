@@ -156,8 +156,6 @@
 
         console.log(newCoords);
 
-        window.map.panTo(newCoords);
-        
         const marker = new google.maps.Marker({
           position: newCoords,
           map: window.map,
@@ -170,6 +168,8 @@
         marker.addListener("click", function () {
           infowindow.open(window.map, marker);
         });
+
+        window.map.panTo(newCoords);
 
       };
     </script>
