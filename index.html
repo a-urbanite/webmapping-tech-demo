@@ -21,9 +21,9 @@
 
 <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
 
-<script type="text/javascript">
-    <?php echo "alert('message');"; ?>
-  </script>
+<!-- <script type="text/javascript">
+  <?php echo "alert('message');"; ?>
+</script> -->
 
 
 <h2>ArcGIS Hosting</h2>
@@ -125,7 +125,7 @@ const geocodeFunction = async (event) => {
     const newCoords = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params: {
             address: enteredAddress,
-            key: 'AIzaSyBGt7x-R0JK3B6wulskJbMLVZ4cAN4Yy4g'
+            key: <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
             }
         })
         .then((res) => {
