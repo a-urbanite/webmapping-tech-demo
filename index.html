@@ -150,7 +150,7 @@
             const coords = res.data.results[0].geometry.location;
 
             const marker = new google.maps.Marker({
-              position: newCoords,
+              position: coords,
               map: window.map,
             });
 
@@ -163,7 +163,7 @@
             });
 
             window.map.panTo(coords);
-            
+
           })
           .catch((err) => {
             console.log(err);
