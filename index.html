@@ -122,58 +122,56 @@
       <input type="submit" hidden />
     </form>
     <script>
-
       function initMap() {
-
         const map = new google.maps.Map(document.getElementById("google-map"), {
           zoom: 4,
           center: { lat: -25.344, lng: 131.036 },
         });
 
-        window.map.data.loadGeoJson(
-          "https://storage.googleapis.com/mapsdevsite/json/google.json"
-        );
+        window.map.data.loadGeoJson("https://storage.googleapis.com/mapsdevsite/json/google.json");
 
         window.map.data.setStyle({
-        fillColor: 'green'
-      });
-
+          fillColor: "green",
+        });
       }
 
       const geocodeFunction = async (event) => {
-          event.preventDefault()
+        event.preventDefault();
 
-          const newCoords = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-              params: {
-                  address: event.target[0].value,
-                  key: "<?php  echo getenv('GOOGLE_MAPS_API_KEY');?>",
-                }
-            })
-            .then((res) => {
-                  console.log(res)
-                  const coords = res.data.results[0].geometry.location
-                  return coords
-              })
-              .catch((err) => {console.log(err)})
-
-          console.log(newCoords)
-
-          const marker = new google.maps.Marker({
-              position: newCoords,
-              map: window.map,
+        const enteredAddress = event.target[0].value;
+        const newCoords = await axios
+          .get("https://maps.googleapis.com/maps/api/geocode/json", {
+            params: {
+              address: enteredAddress,
+              key: "<?php  echo getenv('GOOGLE_MAPS_API_KEY');?>",
+            },
+          })
+          .then((res) => {
+            const coords = res.data.results[0].geometry.location;
+            return coords;
+          })
+          .catch((err) => {
+            console.log(err);
           });
-          var infowindow = new google.maps.InfoWindow({
-                      content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${newCoords.lat} lng ${newCoords.lng}</p>`
-                    });
 
-            infowindow.open(window.map, marker);
+        console.log(newCoords);
 
-        //   marker.addListener('click', function() {
-        //       });
+        window.map.panTo(newCoords);
+        
+        const marker = new google.maps.Marker({
+          position: newCoords,
+          map: window.map,
+        });
 
-          window.map.panTo(newCoords)
+        var infowindow = new google.maps.InfoWindow({
+          content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${newCoords.lat} lng ${newCoords.lng}</p>`,
+        });
 
-      }
+        marker.addListener("click", function () {
+          infowindow.open(window.map, marker);
+        });
+
+      };
     </script>
 
     <h2>OpenLayers</h2>
