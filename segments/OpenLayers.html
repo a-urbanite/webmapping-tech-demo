@@ -1,0 +1,37 @@
+<h2>OpenLayers</h2>
+<p>
+  OpenLayers on the other hand is loaded with functions but more complex to handle. Consider this
+  implementation of one of the
+  <a target="_blank" href="https://openlayers.org/en/latest/examples/shaded-relief.html">official examples</a
+  >.
+</p>
+
+<div id="ol-map" class="map-container"></div>
+<script type="module">
+  import { loadOLHillshadeMap } from "./ol-hillshade.js";
+  loadOLHillshadeMap();
+</script>
+
+<table class="controls">
+  <tr>
+    <td><label for="vert">vertical exaggeration:</label></td>
+    <td><input id="vert" type="range" min="1" max="5" value="1" /></td>
+    <td><span id="vertOut"></span> x</td>
+  </tr>
+  <tr>
+    <td><label for="sunEl">sun elevation:</label></td>
+    <td><input id="sunEl" type="range" min="0" max="90" value="45" /></td>
+    <td><span id="sunElOut"></span> °</td>
+  </tr>
+  <tr>
+    <td><label for="sunAz">sun azimuth:</label></td>
+    <td><input id="sunAz" type="range" min="0" max="360" value="45" /></td>
+    <td><span id="sunAzOut"></span> °</td>
+  </tr>
+</table>
+<p>
+  It generates a hillshade, meaning it takes a Digital Elevation Model (DEM) and calculates the shadowfall
+  given a certain position of the sun. The parameters to define the suns position are linked to the 3 sliders
+  and the calculation is updated whenever on of the sliders is used. Quite elaborated geoprocessing yet
+  completely client-sided. Impressive!
+</p>

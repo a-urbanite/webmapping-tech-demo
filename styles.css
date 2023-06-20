@@ -3,9 +3,22 @@
     margin: 0;
 }
 
+body {
+  background-color: cadetblue !important;
+  padding: 4rem;
+}
+
+h2 {
+  margin-top: 2rem !important;
+}
+
+a {
+  color: blueviolet !important;
+}
+
 .map-container {
     height: 400px;
-    width: 600px; 
+    width: 100%; 
 }
 
 .map-container iframe {

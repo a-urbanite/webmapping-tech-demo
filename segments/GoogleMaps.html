@@ -1,0 +1,63 @@
+<h2>Google Maps API</h2>
+<p>
+  The Google Maps API is also very simple to set up and convinces with easy integration of Googles many
+  sevices. Here i use the Geocoding API to turn placenames and adresses into GeoCoords which are then used set
+  markers and recenter the map. This kind of mocks up the basic search function in google maps. One downside
+  of the Google Maps API is that you need an API key to start
+</p>
+<div id="google-map" class="map-container"></div>
+<form onsubmit="geocodeFunction(event)">
+  <input type="text" placeholder="Enter Adress" />
+  <input type="submit" hidden />
+</form>
+<script>
+  function initMap() {
+    const map = new google.maps.Map(document.getElementById("google-map"), {
+      zoom: 4,
+      center: { lat: -25.344, lng: 131.036 },
+    });
+
+    window.map.data.loadGeoJson("https://storage.googleapis.com/mapsdevsite/json/google.json");
+
+    window.map.data.setStyle({
+      fillColor: "green",
+    });
+  }
+
+  const geocodeFunction = (event) => {
+    event.preventDefault();
+
+    const enteredAddress = event.target[0].value;
+    axios
+      .get("https://maps.googleapis.com/maps/api/geocode/json", {
+        params: {
+          address: enteredAddress,
+          key: "<?php  echo getenv('GOOGLE_MAPS_API_KEY');?>",
+        },
+      })
+      .then((res) => {
+        const coords = res.data.results[0].geometry.location;
+        console.log(coords);
+
+        if (coords) {
+          const marker = new google.maps.Marker({
+            position: coords,
+            map: window.map,
+          });
+
+          var infowindow = new google.maps.InfoWindow({
+            content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${coords.lat} lng ${coords.lng}</p>`,
+          });
+
+          marker.addListener("click", function () {
+            infowindow.open(window.map, marker);
+          });
+
+          window.map.panTo(coords);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+</script>

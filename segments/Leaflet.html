@@ -1,0 +1,20 @@
+<h2>Leaflet</h2>
+<p>
+  Once one has taken the step into actually writing code the fun starts. Leaflet is considered the most
+  accessible library for Webmapping. To build a very basic map only very few lines of code are needed. Below
+  you find an example i built for a Freelance Job - a
+  <a target="blank" href="http://www.akzisemauer-berlin.de/">website</a> accompanying an exhibition about an
+  early-modern city wall surrounding Berlin
+</p>
+<div id="Leaflet_map" class="map-container"></div>
+<script type="module">
+  import { loadLeafletMap } from "./segments/akzisemauer.js";
+  loadLeafletMap();
+</script>
+
+<p>
+  There is certain styling, certain customisation of default elements like the controls and the popup boxes
+  and some interactivity. The checkboxes in the lower left activate overlays of georeferenced digitised paper
+  maps hosted on a tile server here. Leaflet is the best choice when one wants to quickly and easily map some
+  features. It reaches its limits when manipulation of data in the sense of geoprocessing is desired.
+</p>

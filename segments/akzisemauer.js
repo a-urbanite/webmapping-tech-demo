@@ -23,7 +23,7 @@ export const loadLeafletMap = () => {
       
       
   // DISTRICT BRODERS
-  const bezirksgrenzen = new L.GeoJSON.AJAX("./akzisemauer_data/district.geojson", {
+  const bezirksgrenzen = new L.GeoJSON.AJAX("./segments/akzisemauer_data/district.geojson", {
     interactive: false,
     style: {
       "color": "#717171",
@@ -35,7 +35,7 @@ export const loadLeafletMap = () => {
       
       
   //WALL
-  const akzise_wall = new L.GeoJSON.AJAX("./akzisemauer_data/wall.geojson", {
+  const akzise_wall = new L.GeoJSON.AJAX("./segments/akzisemauer_data/wall.geojson", {
     interactive: false,
     style: (feature) => {
     return {
@@ -48,7 +48,7 @@ export const loadLeafletMap = () => {
       
       
   //GATES
-  const akzise_gates = new L.GeoJSON.AJAX("./akzisemauer_data/gates.geojson", {
+  const akzise_gates = new L.GeoJSON.AJAX("./segments/akzisemauer_data/gates.geojson", {
     pointToLayer: (feature, latlng) => L.circleMarker(latlng, {
       radius: feature.properties.type === "station" ? "14" : "8",
       fillColor: feature.properties.bezirk === "Friedrichshain-Kreuzberg" ? "#e5b813" : "#666666",
@@ -63,7 +63,7 @@ export const loadLeafletMap = () => {
 
   
   //WALL PIECES
-  const wallpieces = new L.GeoJSON.AJAX("./akzisemauer_data/wallpieces.geojson", {
+  const wallpieces = new L.GeoJSON.AJAX("./segments/akzisemauer_data/wallpieces.geojson", {
     pointToLayer: (feature, latlng) => L.marker(latlng, {
       icon: L.divIcon({ className: feature.properties.bezirk === "Friedrichshain-Kreuzberg" ? 'wallpiece1' : 'wallpiece2'})
     }),
