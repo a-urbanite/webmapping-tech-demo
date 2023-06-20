@@ -50,13 +50,6 @@
   </head>
   <body>
     <h1>Web Mapping</h1>
-
-    <?php  echo getenv('GOOGLE_MAPS_API_KEY');?>
-
-    <!-- <script type="text/javascript">
-  <?php echo "alert('message');"; ?>
-</script> -->
-
     <h2>ArcGIS Hosting</h2>
     <p>
       The first time i tried to bring Geodata into the web was quite cumbersome because i just started
@@ -135,11 +128,11 @@
         });
       }
 
-      const geocodeFunction = async (event) => {
+      const geocodeFunction = (event) => {
         event.preventDefault();
 
         const enteredAddress = event.target[0].value;
-        await axios
+        axios
           .get("https://maps.googleapis.com/maps/api/geocode/json", {
             params: {
               address: enteredAddress,
