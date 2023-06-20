@@ -11,17 +11,20 @@
   <input type="submit" hidden />
 </form>
 <script>
+
   function initMap() {
     const map = new google.maps.Map(document.getElementById("google-map"), {
       zoom: 4,
       center: { lat: -25.344, lng: 131.036 },
     });
 
-    window.map.data.loadGeoJson("https://storage.googleapis.com/mapsdevsite/json/google.json");
+    map.data.loadGeoJson("https://storage.googleapis.com/mapsdevsite/json/google.json");
 
-    window.map.data.setStyle({
+    map.data.setStyle({
       fillColor: "green",
     });
+
+    window.map = map;
   }
 
   const geocodeFunction = (event) => {
@@ -37,9 +40,8 @@
       })
       .then((res) => {
         const coords = res.data.results[0].geometry.location;
-        
+
         if (coords) {
-          console.log("COORDS: ", coords);
           const marker = new google.maps.Marker({
             position: coords,
             map: window.map,
@@ -49,11 +51,9 @@
             content: `<p>Place: ${enteredAddress}</p><p>Coordinates: lat ${coords.lat} lng ${coords.lng}</p>`,
           });
 
-          marker.addListener("click", function () {
-            infowindow.open(window.map, marker);
-          });
+          infowindow.open(window.map, marker);
 
-          window.map.panTo({lat: 52.52000659999999, lng: 13.404954});
+          window.map.panTo(new google.maps.LatLng(coords));
         }
       })
       .catch((err) => {
